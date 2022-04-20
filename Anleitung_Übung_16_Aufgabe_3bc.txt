@@ -1,0 +1,12 @@
+1.) Berechnen der Inversen von K_m (aus Teil a) mittels "modulare_inverse.py"
+2.) allgemeine Gleichung für Klartexte: x = y * K^-1_m (siehe Schritt 1) mod 41 (41 wegen Z*_41)
+3.) Das Chiffrat ([18,18,18,7,35,4,23,11,29,37,34,27,29,28] hier als Array) mit Hilfe von 
+    "elgamal_entschlüsseln_liste.py" mit den Werten K^-1_m (siehe Schritt 1) ausführen
+4.) Das ausgegebene Array folglich in "h16_3b.py" für "arr_x" einsetzen
+5.) Die Ausgabe ist ein String die alle Klartexte für das spezifische K_m darstellen 
+6.) ab Schritt 3 das Prozedere mit den anderen K^-1_m wiederholen
+
+c)
+1.) Die offensichtlichen Klartext Möglichkeiten finden (sehr offensichtlich!!)
+2.) Die übrigen mithilfe von "https://en.wikipedia.org/wiki/List_of_cryptographers#:~:text=%C3%89tienne%20Bazeries%2C%20French%2C%20military%2C%20considered%20one%20of%20the,%28%22Secret%20ciphers%20unveiled%22%29.%20Giovan%20Battista%20Bellaso%2C%20Italian%20cryptologist"
+    herausfinden (geht logisch vor, Brute-Force dauert sehr, sehr lange (vertraut mir))

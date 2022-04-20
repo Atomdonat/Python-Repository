@@ -1,0 +1,1 @@
+Run, cmd.exe /c C:\Users\Atomdonat\AppData\Local\Vivaldi\Application\vivaldi.exe

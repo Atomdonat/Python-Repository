@@ -1,0 +1,20 @@
+To-Do:
+    ▢ Namen finden
+    ▢ auf Raspberry implementieren 
+    ▢ passiv-aktive Funktion
+    ▢ Reddit, Opera und vivaldi, etc. zum laufen bringen
+    ▢ 
+    ▢ 
+    ▢ 
+
+
+
+Erledigt:
+    ▣ Text zu Sprache
+    ▣ Sprache zu Text
+    ▣ Google-/Youtubesuche
+    ▣ ausgewählte Apps/Spiele starten 
+    ▣ 
+    ▣ 
+    ▣ 
+    ▣ 
