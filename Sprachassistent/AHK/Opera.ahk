@@ -1,1 +1,0 @@
-Run, cmd.exe /c "C:\Users\Atomdonat\AppData\Local\Programs\Opera GX\opera.exe"

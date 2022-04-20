@@ -1,1 +1,0 @@
-Run, cmd.exe /c F:\Steam\steamapps\common\Satisfactory\FactoryGame.exe

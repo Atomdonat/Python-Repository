@@ -1,5 +1,24 @@
-from matrix_multiplication import *
+def skalar(A, B):
 
+    for m in range(0, len(A)):
+        C = []
+        c = 0
+        for n in range(0,len(A[m])):
+            
+            c += A[m][n] * B[n][m]
+        C.append(c)
+        print(C)
+
+MatA = [[1,2,3],
+        [4,5,6],
+        [0,0,0]]
+
+MatB = [[1,4,0],
+        [2,5,0],
+        [3,6,0]]
+
+
+'''
 MatA = [[  1,  2,  3,  4,  5,  6],
         [  7,  8,  9, 10, 11, 12],
         [ 13, 14, 15, 16, 17, 18],
@@ -13,8 +32,5 @@ MatB = [[ 1,  7, 13, 19, 25, 31],
         [ 4, 10, 16, 22, 28, 34],
         [ 5, 11, 17, 23, 29, 35],
         [ 6, 12, 18, 24, 30, 36]]
-
-multiplyMatrix(len(MatA), len(MatA[0]), MatA,
-               len(MatB), len(MatB[0]), MatB)
-multiplyMatrix(len(MatB), len(MatB[0]), MatB,
-               len(MatA), len(MatA[0]), MatA)
+'''
+print(skalar(MatA,MatB))

@@ -1,1 +1,0 @@
-Run, cmd /c C:\Users\Atomdonat\AppData\Local\Autodesk\webdeploy\production\6a0c9611291d45bb9226980209917c3d\FusionLauncher.exe

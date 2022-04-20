@@ -1,1 +1,0 @@
-Run, cmd.exe /c "C:\Program Files\GIMP 2\bin\gimp-2.10.exe"

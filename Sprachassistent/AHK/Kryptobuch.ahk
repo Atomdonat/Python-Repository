@@ -1,1 +1,0 @@
-Run, cmd.exe /c E:\Desktop\KryptoBuch.pdf
