@@ -25,6 +25,7 @@ def baby_step_giant_step(a, b, p):
             if giant_step(a, b, m, p, k) == arr_b[i]:
                 print("Ergebnis Giant-Step-Phase:",giant_step(a, b, m, p, k), "∈", list(sorted(arr_b)))
                 x = k*m+i
+                print("Berechnung x:", str(k), "*", str(m),  "+", str(i), "=", str(x))
                 return "x = " + str(x), str(a) + "^" + str(x) + " ≡ " + str(b) + " mod " + str(p)
                 
 
