@@ -18,4 +18,4 @@ b = 41#int(input("b: "))
 
 ea = EuklidischerAlgorithmus(a,b)
 
-print(int(ea))     
+print(EuklidischerAlgorithmus(9,41))     
