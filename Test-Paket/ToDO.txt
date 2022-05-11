@@ -84,6 +84,6 @@
         ▣ Rechnen mit Polynomen
     ▣ effizientes Rechnen:
         ▣ Square and Multiply (potenzieren)
-        ▣ Double and Add
+        ▣ Double and Add (multiplizieren)
     
   

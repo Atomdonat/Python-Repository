@@ -285,8 +285,8 @@ def ordnung_Punkt(Koeffizient_a_von_E, Punkt, mod):
     while not Punkt in arr_punkte:
         Punkt2 = Punktoperationen_auf_E(Koeffizient_a_von_E, "*", mod, Punkt2)
         arr_punkte.append(Punkt2)
-    arr_punkte.append([Punkt[0], float('inf')])
-    return arr_punkte, len(arr_punkte)
+    arr_punkte.append([Punkt[0], float('inf')]) ## neutrales Element
+    return len(arr_punkte)
 
 
 
