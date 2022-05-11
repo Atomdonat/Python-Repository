@@ -1,0 +1,89 @@
+▢ alles auf Funktion testen
+
+▢ Krypto:
+    ▢ AES:
+        ▢ AES Verschlüsseln
+        ▢ AES Entschlüsseln
+    ▢ DES:
+        ▢ DES Verschlüsseln
+        ▢ DES Entschlüsseln
+    ▢ Diffie-Hellmann:
+        ▢ DH Verschlüsseln
+        ▢ DH Entschlüsseln
+        ▢ Elgamal Verschlüsseln
+        ▢ Elgamal Entschlüsseln
+    ▢ Diskrete Logarithmus Probleme:
+        ▢ DLP
+    ▣ Elliptische Kurven:
+        ▣ alle_Punkte_auf_E
+        ▣ Baby_Step_Giant_Step
+        ▣ gültige Kurve
+        ▣ gültiger Punkt
+        ▣ Punktoperationen
+        ▣ Double_and_Add (Effizientes multiplizieren mit Punkten)
+    ▢ LCG:
+        ▢ LCG Verschlüsseln
+        ▢ LCG Entschlüsseln
+    ▢ LFSR:
+        ▢ LFSR Verschlüsseln
+        ▢ LFSR Entschlüsseln
+    ▢ RSA:
+        ▢ RSA Verschlüsseln
+        ▢ RSA Entschlüsseln
+        
+▢ Mathe:
+    Operationen auf...:
+        ▢ Matrizen
+        ▢ Körper
+        ▢ Ringen
+        ▢ Gruppen
+    LGS:
+        ▢ lineares Gleichungssystem
+        ▢ lineares Gleichungssystem mit mod
+    Fehlerkorrigierende Codes:
+        ▢ Matriz-aG?!
+    Permutationen:
+        ▢ Permutationen
+
+▣ Hilfsfunktionen:
+    ▣ PC-Orientiert:
+        ▣ b-adisches Rechnen (b <= 10)
+        ▣ hex <-> bin <-> int <-> str
+            ▣ hex -> bin
+            ▣ hex -> int
+            ▣ hex -> str
+
+            ▣ bin -> hex
+            ▣ bin -> int
+            ▣ bin -> str
+
+            ▣ int -> hex
+            ▣ int -> bin
+            ▣ int -> str
+
+            ▣ str -> hex
+            ▣ str -> int
+            ▣ str -> bin
+        ▣ datenrechner (b,B...)
+        ▣ dotted Numbers
+        ▣ Liste reverse
+    ▣ Inversen und ggT:
+        ▣ Erweiterter Euklidischer Algorithmus (mit/ohne Bezout Koeffizienten)
+        ▣ größter gemeinsamer Teiler
+        ▣ kleinstes gemeinsames Vielfaches
+        ▣ modulare Inverse
+        ▣ Chinesischer Restsatz
+    ▣ Primes:
+        ▣ Primzahltest
+        ▣ Primfaktorzerlegung
+    ▣ mögliche Ordnungen:
+        ▣ Liste
+        ▣ Punkt
+        ▣ Elliptische Kurve
+    ▣ Polynome:
+        ▣ Rechnen mit Polynomen
+    ▣ effizientes Rechnen:
+        ▣ Square and Multiply (potenzieren)
+        ▣ Double and Add
+    
+  

@@ -30,24 +30,7 @@ def primitiv_ordnung(prime, m, dic={}, dic2={}, arr = []):
         for j in range(1, prime):
             if not multiplikative_ordnung(j, prime) in arr:
                 arr.append(multiplikative_ordnung(j, prime))
-            
-            if j%4 == 0:
-                print("/")
-            if j%4 == 1:
-                print("-")
-            if j%4 == 2:
-                print("\\")
-            if j%4 == 3:
-                print("|")
-            if j%4 == 0:
-                print("/")
-            if j%4 == 1:
-                print("-")
-            if j%4 == 2:
-                print("\\")
-            if j%4 == 3:
-                print("|")
-            
+                       
             
             # print(multiplikative_ordnung(j, prime))
         #   dic[j] = multiplikative_ordnung(j,prime)

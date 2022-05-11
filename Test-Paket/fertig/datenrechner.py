@@ -74,4 +74,4 @@ x = float(input("Paketgröße (float): ")) ## 68
 y = str(input("aktuelle Einheit: "))     ## MB
 z = str(input("Ziel-Einheit: "))         ## kib
 # print(b_in_ib(x,y,z))
-datenrechner(x,y,z)
+# datenrechner(x,y,z)
