@@ -1,6 +1,7 @@
 Übersicht bislang implementierter Funktionen/Methoden:
 
 Elliptische Kurven:
+
     alle Punkte auf E
     Baby-Step Giant-Step
     gültige Kurve
@@ -9,24 +10,27 @@ Elliptische Kurven:
     Double and Add (Effizientes multiplizieren mit Punkten)
 
 Hilfsfunktionen:
+
     PC-Orientiert:
+	
         b-adisches Rechnen (b <= 10)
         hex <-> bin <-> int <-> str
             hex -> bin
             hex -> int
             hex -> str
-
+			
             bin -> hex
             bin -> int
             bin -> str
-
+			
             int -> hex
             int -> bin
             int -> str
-
+			
             str -> hex
             str -> int
             str -> bin
+			
         datenrechner (b,B,k,Mi,...)
         dotted Numbers
         Liste reverse
@@ -53,4 +57,4 @@ Hilfsfunktionen:
 
     effizientes Rechnen:
         Square and Multiply (potenzieren)
-        Double and Add (multiplizieren)
+        Double and Add (multiplizieren)    
