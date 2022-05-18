@@ -169,15 +169,15 @@ def datenumrechner(bit, einheit_ist, einheit_soll):
 
     return datenrechner(bit, einheit_ist, einheit_soll)
 
-def dotted_number(a):
-    b = str(a)
-    if len(b) <= 3:
-        return b
-    elif len(b) <= 6:
-        return str(b[0:len(b)-3] + "." + b[len(b)-3:len(b)])
-    elif len(b) <= 9:
-        return str(b[0:len(b)-6] + "." + b[len(b)-6:len(b)-3] + "." + b[len(b)-3:len(b)])
-
+def dotted_number(zahl):
+    dotted_zahl = str(zahl)
+    if len(dotted_zahl) <= 3:
+        return dotted_zahl
+    elif len(dotted_zahl) <= 6:
+        return str(dotted_zahl[0:len(dotted_zahl)-3] + "." + dotted_zahl[len(dotted_zahl)-3:len(dotted_zahl)])
+    elif len(dotted_zahl) <= 9:
+        return str(dotted_zahl[0:len(dotted_zahl)-6] + "." + dotted_zahl[len(dotted_zahl)-6:len(dotted_zahl)-3] + "." + dotted_zahl[len(dotted_zahl)-3:len(dotted_zahl)])
+    
 def list_reverse(L, Lr):
     length = len(L)
     for i in range(0,length):
@@ -201,7 +201,7 @@ def kgv(a, b):
 
 def modulare_inverse(zahl, mod):
     for inverse in range(1, mod):
-        if (zahl % mod) * (inverse % mod) % mod == 1:
+        if zahl * inverse % mod == 1:
             return inverse
 
 def erweiterter_euklid(zahl, mod):
@@ -287,8 +287,6 @@ def ordnung_Punkt(Koeffizient_a_von_E, Punkt, mod):
         arr_punkte.append(Punkt2)
     arr_punkte.append([Punkt[0], float('inf')]) ## neutrales Element
     return len(arr_punkte)
-
-
 
 '''
 ▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰

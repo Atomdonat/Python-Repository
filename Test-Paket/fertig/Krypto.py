@@ -1,7 +1,71 @@
 ## benötigte Python-Imports:
 import math
-import Hilfsmethoden
+import Hilfsmethoden as Hilfsmethoden
 
+'''
+▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰
+'''
+
+## AES:
+
+'''
+▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰
+'''
+
+## DES:
+
+'''
+▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰
+'''
+## Diffie-Hellman:
+
+'''
+▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰
+'''
+
+## digitale Signale:
+
+def sig_RSA(k_pr, x, mod):
+    return rsa_decode(x, k_pr, mod)
+
+def ver_RSA(x, signatur, k_pub = ["n", "e"]):
+    return rsa_encode(signatur, k_pub[1], k_pub[0]) == x
+
+def signatur_elgamal(mod, alpha, k_pr, plain, k_e):
+    ## berechnung K_E^-1:
+    def inv_k_e(k_e,mod):
+        return Hilfsmethoden.modulare_inverse(k_e, mod)
+
+    ## berechnung r:
+    def signatur_r(alpha, plain, mod):
+        return Hilfsmethoden.square_and_multiply(alpha, plain, mod)
+
+    ## berechnung s:
+    def signatur_s(plain, k_pr, alpha, k_e, mod):
+        x = plain
+        d = k_pr
+        r = signatur_r(alpha, plain, mod)
+        k_e_inv = inv_k_e(k_e, mod)
+        return (x - d * r) * k_e_inv % (mod - 1)
+    
+    return signatur_r(alpha, plain, mod), signatur_s(plain, k_pr, alpha, k_e, mod)
+
+def verify_elgamal(alpha, plain, beta, r_sig, s_sig, mod):
+    def t_verify(beta, r_sig, s_sig, mod):
+        return Hilfsmethoden.square_and_multiply(beta, r_sig, mod) * Hilfsmethoden.square_and_multiply(r_sig, s_sig, mod)
+    return t_verify(beta, r_sig, s_sig, mod) == Hilfsmethoden.square_and_multiply(alpha, plain, mod)
+
+'''
+▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰
+'''
+
+## Diskrete Logarithmen:
+
+'''
+▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰
+'''
+
+##Elliptische Kurven:
 
 ## ist die Kurve E: y² ≡ x³ + a * x + b eine Elliptischen Kurve
 def gültige_Kurve(Koeffizient_a_von_E, Koeffizient_b_von_E, mod):
@@ -137,3 +201,52 @@ def double_and_add(Koeffizient_a_von_E, Punkt, Exponent, mod):
                 Punkt_neu = double(a_E, Punkt_neu, mod)
         return Punkt_neu
     return double_add(Koeffizient_a_von_E, Punkt, Exponent, mod)
+
+'''
+▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰
+'''
+
+## LCG:
+
+'''
+▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰
+'''
+
+## LFSR:
+
+'''
+▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰
+'''
+
+## RSA:
+def rsa_encode(plain, k_pub = ["e","n"]):
+    from Hilfsmethoden import square_and_multiply as sam
+    return sam(plain,k_pub[0],k_pub[1])
+
+def rsa_decode(cipher, k_pr = "d", n = "mod"):
+    from Hilfsmethoden import square_and_multiply as sam
+    return sam(cipher, k_pr, n)
+
+def rsa_n(p,q):
+    return p*q
+
+def rsa_phi_n(p,q):
+    return (p-1) * (q-1)
+
+def rsa_valid_e(e,phi_n):
+    from Hilfsmethoden import ggT
+    return ggT(e, phi_n) == 1
+
+def rsa_k_pr(e,phi_n):
+    from Hilfsmethoden import modulare_inverse as inv
+    return inv(e,phi_n)
+
+'''
+▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰
+'''
+
+##
+
+'''
+▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰
+'''
