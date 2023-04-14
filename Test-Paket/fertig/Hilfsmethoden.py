@@ -47,23 +47,23 @@ def datentypen_ändern(wert, ist_typ, soll_typ):
         return "".join([chr(int(binary, 2)) for binary in bin_string.split(" ")])
 
     ## int to ...
-    def int_to_hex(int_zahl):
+    def int_to_hex(int_zahl:int):
         return hex(int_zahl)
 
-    def int_to_bin(int_zahl):
+    def int_to_bin(int_zahl:int):
         return bin(int_zahl)
 
-    def int_to_str(int_zahl):
+    def int_to_str(int_zahl:int):
         return chr(int_zahl)
 
     ## str to ...
-    def str_to_hex(string):
+    def str_to_hex(string:str):
         return ' '.join(format(ord(x), 'x') for x in string)
 
-    def str_to_bin(string):
+    def str_to_bin(string:str):
         return ' '.join(format(ord(x), 'b') for x in string)
 
-    def str_to_int(string):
+    def str_to_int(string:str):
         return ' '.join(format(ord(x), 'd') for x in string)
     
     if ist_typ == "hex":
@@ -95,7 +95,7 @@ def datentypen_ändern(wert, ist_typ, soll_typ):
         elif soll_typ == "int":
             return str_to_int(wert)
 
-def datenumrechner(bit, einheit_ist, einheit_soll):
+def datenumrechner(bit:int, einheit_ist:str, einheit_soll:str):
     def einheit1(einheit):
     ##Bit or Byte:
         if any(i in einheit for i in("b", "bit")):
@@ -106,7 +106,7 @@ def datenumrechner(bit, einheit_ist, einheit_soll):
             faktor1 = 8
 
     ##Kilo or Kibi:
-        if einheit[0] == "k":
+        if einheit[0] == "k" or einheit[0] == "K":
             if einheit[1] == "i":
                 faktor = pow(2,10)*faktor1 
             else: 
@@ -160,8 +160,8 @@ def datenumrechner(bit, einheit_ist, einheit_soll):
         return faktor
 
     def datenrechner(bit, einheit_ist="", einheit_soll=""):
-        #Input will be transformed to bit then to target size/form
-        #Output will be a float
+        ## Input will be transformed to bit then to target size/form
+        ## Output will be a float
         faktor1 = einheit1(einheit_ist); faktor2 = einheit1(einheit_soll)     
         ergebnis = (bit*faktor1)/faktor2
         print(bit, einheit_ist,"=", ergebnis, einheit_soll)
@@ -200,9 +200,12 @@ def kgv(a, b):
             return i*max(a,b)
 
 def modulare_inverse(zahl, mod):
-    for inverse in range(1, mod):
-        if zahl * inverse % mod == 1:
-            return inverse
+    # alt
+    # for inverse in range(1, mod):
+    #     if zahl * inverse % mod == 1:
+    #         return inverse
+    
+    return pow(zahl,-1,mod)
 
 def erweiterter_euklid(zahl, mod):
     q = [0,0]
@@ -257,6 +260,12 @@ def primfaktorzerlegung(n):
                 n //= i
         i += 1
     return arr
+
+def kardinalitat(number:int):
+    phi = 1
+    for i in primfaktorzerlegung(number):
+        phi *= (i-1)
+    return phi
 
 '''
 ▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰
@@ -371,3 +380,45 @@ def double_and_add(base, koeffizient, mod):
                 base_neu = double(base_neu, mod)
         return base_neu
     return double_and_add(base, koeffizient, mod)
+
+'''
+▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰
+'''
+
+## Primititive Elemente einer zyklischen Gruppe:
+def primitiveElemente_von_G(group_index:int):
+
+    ## Alle Gruppenelemente (1,2,...,p-1) in eine Liste schreiben
+    def elemente_von_G(index:int):
+        elemente = []
+        for i in range(1,index):
+            elemente.append(i)
+        return elemente
+    
+    ## Finden der Ordnungen von G über die Gruppenkardinalität |G| = Phi(p)
+    def ordnungen_von_G(prime:int):
+        ord = []
+        for i in range(1,kardinalitat(prime)+1):
+            if (prime - 1)%i == 0:
+                ord.append(i)
+        return ord
+
+    ## Ordnung von einem Element berechnen
+    def ordnung_von_alpha(alpha:int, ordnungen:list, modulus:int):
+        for i in ordnungen:
+            if pow(alpha,i,modulus) == 1:
+                return i
+
+    ## Prüfen ob die Ordnung maximal ist <=> ist das Element primitiv
+    def ist_primitiv(ordnung:int,modulus:int):
+        return ordnung == modulus-1
+    
+    
+    alle_primitiven_elemente = []
+    for element in elemente_von_G(group_index):
+        ## Sollte ein Element primitiv sein, wird es der Liste aller primitiven Elemente hinzugefügt:
+        if ist_primitiv(ordnung_von_alpha(element,ordnungen_von_G(group_index),group_index),group_index) == True:
+            alle_primitiven_elemente.append(element)
+    
+    # print("Primitive Elemente von G sind:", alle_primitiven_elemente)
+    return alle_primitiven_elemente

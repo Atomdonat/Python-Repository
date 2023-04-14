@@ -58,3 +58,7 @@ Hilfsfunktionen:
     effizientes Rechnen:
         Square and Multiply (potenzieren)
         Double and Add (multiplizieren)    
+
+    Primitivität:
+        Kardinalität/Phi(n)
+        Primitive Elemente
