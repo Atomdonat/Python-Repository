@@ -52,6 +52,6 @@ def create_uml_class_diagram(target_directory: str, target_file: str, output_dir
 if __name__ == '__main__':
     create_uml_class_diagram(
         target_directory='C:/Programmieren/SpotipyClient/',
-        target_file='main.py',
+        target_file='Classes.py',
         output_directory='C:/Programmieren/SpotipyClient/class_diagramms'
     )
