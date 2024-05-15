@@ -1,0 +1,7 @@
+    Aufbau:              &	Der Angreifer fängt eine verschlüsselte S/MIME-Nachricht ab und versucht, sie zu entschlüsseln, ohne den privaten Schlüssel des Empfängers zu kennen. \\[10pt]
+    Formeln:             &	Die verwendeten     Formeln:             & hängen von der Art des Angriffs ab. RSA-Kryptosystem: C=Pe(modn) P=Cd(modn) Elliptic Curve Cryptography: Q=kP C=kG+H(m) \\[10pt]
+    Erklärung:           &	Der Angreifer nutzt verschiedene kryptographische Techniken, um die Nachricht zu entschlüsseln. Mögliche Angriffe: - Brute-Force-Angriff - Chosen-Ciphertext-Angriff - Side-Channel-Angriff \\[10pt]
+    Angriffsart:         &	Abhängig von der verwendeten Methode kann der Angriff passiv oder aktiv sein. - Passiv: Der Angreifer lauscht nur auf den Datenverkehr. - Aktiv: Der Angreifer manipuliert den Datenverkehr. \\[10pt]
+    Sicherheitsziele:    &	S/MIME soll die folgenden     Sicherheitsziele:    & erreichen: - Vertraulichkeit: Nur der Empfänger kann die Nachricht lesen. - Integrität: Die Nachricht kann nicht verändert werden, ohne dass es bemerkt wird. - Authentizität: Der Empfänger kann sicher sein, dass die Nachricht vom Absender stammt. \\[10pt]
+    Benötigte Variablen: &	- Abgefangene S/MIME-Nachricht - Öffentlicher Schlüssel des Empfängers - (Optional) Private Schlüssel des Angreifers (für aktive Angriffe) \\[10pt]
+    Verhinderbar durch:  &	- Verwendung starker Passwörter und kryptographischer Schlüssel - Sichere Implementierung von S/MIME - Regelmäßige Updates der Software \\[10pt]
